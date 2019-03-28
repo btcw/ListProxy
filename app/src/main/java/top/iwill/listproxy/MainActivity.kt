@@ -2,14 +2,11 @@ package top.iwill.listproxy
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
-import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
-import top.iwill.listmanager.RecyclerViewDelegate
+import top.iwill.listmanager.RecyclerViewProxy
 import top.iwill.listproxy.adapter.MyRcyAdapter
 import kotlin.random.Random
 
@@ -34,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         rv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rv.adapter = MyRcyAdapter(list)
-        val rvd = RecyclerViewDelegate(rv, null, mErrorView)
+        val rvd = RecyclerViewProxy(rv, null, mErrorView)
         rvd.notifyDataSetChanged()
 
         mErrorView.findViewById<TextView>(R.id.refresh).setOnClickListener {

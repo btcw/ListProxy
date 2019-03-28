@@ -12,7 +12,7 @@ import android.widget.TextView
  * @author: btcw
  * @date: 2019/3/28
  */
-class RecyclerViewDelegate(
+class RecyclerViewProxy(
     private val mRecyclerView: RecyclerView,
     var mEmptyView: View? = null,
     var mErrorView: View? = null
